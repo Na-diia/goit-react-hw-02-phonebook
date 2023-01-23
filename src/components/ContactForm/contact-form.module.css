@@ -5,6 +5,9 @@
 
 .form {
     display: block;
+    border: 2px solid #1A318E;
+    padding: 20px;
+    width: 50%;
 }
 
 .btn {

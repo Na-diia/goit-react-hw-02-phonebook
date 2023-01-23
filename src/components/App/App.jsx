@@ -54,8 +54,8 @@ export class App extends Component {
     <ContactForm 
     addContact={this.addContact}/>
     
-    <h2 className={styles.title}>Contacts</h2>
-    <Filter filter={this.filterChange} />
+    <h2 className={styles.name}>Contacts</h2>
+    <Filter filter={this.filterChange} value={this.state.filter}/>
     <ContactList filter={filterContact}
     deleteContact={this.deleteContact} />
   </div>

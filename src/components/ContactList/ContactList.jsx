@@ -15,7 +15,7 @@ export const ContactList =({filter, deleteContact}) => {
     )
 };
 
-ContactList.prototype = {
+ContactList.propTypes = {
   filter: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -23,5 +23,5 @@ ContactList.prototype = {
       number: PropTypes.string.isRequired,
     })
   ),
-  onDeleteContact: PropTypes.func.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };

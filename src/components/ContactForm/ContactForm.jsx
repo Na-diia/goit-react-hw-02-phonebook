@@ -10,7 +10,7 @@ export class ContactForm extends Component{
    };
 
   static propTypes = {
-    addContact: PropTypes.func,
+    addContact: PropTypes.func.isRequired,
    };
 
   formChange = e => {
