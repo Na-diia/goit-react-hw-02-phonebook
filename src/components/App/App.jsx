@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
+
 import styles from './app.module.css';
 
 export class App extends Component {
@@ -21,7 +22,7 @@ export class App extends Component {
     const contact = { id: nanoid(), name, number};
 
     if(this.state.contacts.find(item => {
-      return item.name === contact.name;
+      return item.name.toLowerCase() === contact.name.toLowerCase();
     })) {
       return alert (`${contact.name} is already in contacts!`);
     };
@@ -31,8 +32,8 @@ export class App extends Component {
     }));
   };
 
-  filterChange = e => {
-    this.setState({ filter: e.currentTarget.value });
+  filterChange = ({target}) => {
+    this.setState({ filter: target.value });
   };
 
   deleteContact = contactId => {

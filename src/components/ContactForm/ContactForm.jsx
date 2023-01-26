@@ -7,14 +7,22 @@ export class ContactForm extends Component{
  state = {
     name: '',
     number: '',
-   };
+  };
 
   static propTypes = {
     addContact: PropTypes.func.isRequired,
-   };
+  };
 
-  formChange = e => {
-    this.setState({ [e.currentTarget.name]: e.currentTarget.value });
+  reset() {
+    this.setState({
+      name: "",
+      number: "",
+    });
+  };
+
+  formChange = ({target}) => {
+    const {name, value} = target;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = (event) => {
